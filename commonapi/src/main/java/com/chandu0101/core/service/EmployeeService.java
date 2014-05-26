@@ -1,34 +1,31 @@
 package com.chandu0101.core.service;
 
 import com.chandu0101.core.entity.Employee;
-import com.chandu0101.core.util.ClassUtils;
-import com.mongodb.*;
-import com.mongodb.util.JSON;
+import com.mongodb.BasicDBObject;
+import com.mongodb.DBCollection;
+import com.mongodb.DBCursor;
+import com.mongodb.DBObject;
 import org.bson.types.ObjectId;
 
 import javax.annotation.PostConstruct;
 import javax.inject.Singleton;
 import java.io.IOException;
-import java.io.InputStream;
-import java.net.URL;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
 
+import static com.chandu0101.core.db.MongoConnectionFactory.getDB;
 import static com.chandu0101.core.db.MongoObjectConverter.fromDBObject;
 import static com.chandu0101.core.db.MongoObjectConverter.toDBObject;
-import static com.chandu0101.core.util.FileUtils.readFileAsString;
 
 /**
  * Created by chandrasekharkode on 5/20/14.
  */
 @Singleton
-public class EmployeeService {
+public class EmployeeService extends BaseService {
 
     private static final String EMPLOYEES = "employees";
     public static final String ID = "_id";
-    public static final String TEST_EMPLOYEES_JSON_FILE = "testEmployees.json";
 
     //test data
     public static final String KODE = "Kode";
@@ -50,14 +47,8 @@ public class EmployeeService {
     @PostConstruct
     public void initDB() {
         try {
-            MongoClient mongoClient = new MongoClient("localhost", 27017);
-            DB db = mongoClient.getDB("test");
-            employeeCollection = db.getCollection(EMPLOYEES);
-            if (!db.collectionExists(EMPLOYEES)) {
-                employeeCollection = db.createCollection(EMPLOYEES, null);
-            }
-            employeeCollection.drop();
-            insertTestData();
+            employeeCollection = getDB().getCollection(EMPLOYEES);
+            insertTestData(EMPLOYEES, employeeCollection);
         } catch (UnknownHostException e) {
             e.printStackTrace();
         } catch (IOException e) {
@@ -107,11 +98,6 @@ public class EmployeeService {
     public Employee getByQuery(DBObject query) throws Exception {
         DBObject dbObject = employeeCollection.findOne(query);
         return fromDBObject(dbObject, Employee.class);
-    }
-
-    private void insertTestData() throws IOException {
-        String jsonTestData = readFileAsString(TEST_EMPLOYEES_JSON_FILE);
-        employeeCollection.insert((List<DBObject>) JSON.parse(jsonTestData));
     }
 
 

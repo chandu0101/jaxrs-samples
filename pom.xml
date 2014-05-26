@@ -11,6 +11,7 @@
         <module>helloworld</module>
         <module>httpmethods</module>
         <module>commonapi</module>
+        <module>subresourcelocator</module>
     </modules>
 
     <packaging>pom</packaging>
