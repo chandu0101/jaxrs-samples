@@ -22,4 +22,5 @@ Where I learn about Jaxrs 2.0 restful webservices
                      • @javax.ws.rs.POST
                      • @javax.ws.rs.DELETE
                      
-                     
+  **SubResourceLocator** :   Subresource lo‐ cators are Java methods annotated with @Path, but with no HTTP method annotation, like @GET, applied to them. This type of method returns an object that is, itself, a JAX- RS annotated service that knows how to dispatch the remainder of the request.
+                           [More Info](http://docs.oracle.com/javaee/6/tutorial/doc/gknav.html)
