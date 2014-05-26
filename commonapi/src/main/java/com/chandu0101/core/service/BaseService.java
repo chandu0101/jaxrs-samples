@@ -13,9 +13,9 @@ import static com.chandu0101.core.util.FileUtils.readFileAsString;
 /**
  * Created by chandrasekharkode on 5/25/14.
  */
-public abstract class BaseService {
+abstract class BaseService {
 
-    protected  void  insertTestData(String collectionName,DBCollection collection) throws IOException {
+    void  insertTestData(String collectionName, DBCollection collection) throws IOException {
         collection.drop();
         String jsonTestData = readFileAsString(collectionName.concat(JSON_EXTENSION));
         collection.insert((List<DBObject>) JSON.parse(jsonTestData));

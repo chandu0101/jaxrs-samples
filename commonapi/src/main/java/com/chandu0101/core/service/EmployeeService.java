@@ -49,8 +49,6 @@ public class EmployeeService extends BaseService {
         try {
             employeeCollection = getDB().getCollection(EMPLOYEES);
             insertTestData(EMPLOYEES, employeeCollection);
-        } catch (UnknownHostException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -60,14 +58,10 @@ public class EmployeeService extends BaseService {
 
     public Collection<Employee> getAll() throws Exception {
         Collection<Employee> allEmployees = new ArrayList<>();
-        DBCursor cursor = null;
-        try {
-            cursor = employeeCollection.find();
+        try (DBCursor cursor = employeeCollection.find()) {
             for (DBObject dbObject : cursor.toArray()) {
                 allEmployees.add(fromDBObject(dbObject, Employee.class));
             }
-        } finally {
-            cursor.close();
         }
         return allEmployees;
     }

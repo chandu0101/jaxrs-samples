@@ -12,7 +12,7 @@ import org.jboss.shrinkwrap.resolver.api.maven.Maven;
  */
 public class TestDeployment {
 
-    public static String ORG_MONGODB_MONGO_JAVA_DRIVER = "org.mongodb:mongo-java-driver:2.11.4";
+    public static final String ORG_MONGODB_MONGO_JAVA_DRIVER = "org.mongodb:mongo-java-driver:2.11.4";
     private WebArchive webArchive;
 
     public TestDeployment(Package pkg) {

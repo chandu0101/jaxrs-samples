@@ -31,8 +31,8 @@ import static org.junit.Assert.assertTrue;
 public class SessionsControllerTest {
 
 
-    public static final String STAGE = "stage";
-    public static final String DEV = "dev";
+    private static final String STAGE = "stage";
+    private static final String DEV = "dev";
 
     @Deployment(testable = false)
     public static WebArchive create() {

@@ -18,8 +18,8 @@ public class FileUtils {
      * @return
      * @throws IOException
      */
-    public static String readFileAsString(String fileName) throws IOException {
-        String result = null;
+    public static String readFileAsString(String fileName) {
+        String result;
         final InputStream resourceAsStream = getResourceAsStream(fileName);
         BufferedReader reader = new BufferedReader(new InputStreamReader(resourceAsStream, StandardCharsets.UTF_8));
         result = reader.lines().collect(Collectors.joining(""));

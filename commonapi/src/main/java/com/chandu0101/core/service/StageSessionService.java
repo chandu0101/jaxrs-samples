@@ -8,7 +8,6 @@ import com.mongodb.DBObject;
 import javax.annotation.PostConstruct;
 import javax.inject.Singleton;
 import java.io.IOException;
-import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.Collection;
 
@@ -39,13 +38,10 @@ public class StageSessionService extends BaseService {
 
     public Collection<Session> getAllSessions() throws Exception {
         Collection<Session> result = new ArrayList<>();
-        final DBCursor cursor = stageSessionsCollection.find();
-        try {
+        try (DBCursor cursor = stageSessionsCollection.find()) {
             for (DBObject dbObject : cursor.toArray()) {
                 result.add(fromDBObject(dbObject, Session.class));
             }
-        } finally {
-            cursor.close();
         }
         return result;
     }

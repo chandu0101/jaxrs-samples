@@ -8,7 +8,6 @@ import com.mongodb.DBObject;
 import javax.annotation.PostConstruct;
 import javax.inject.Singleton;
 import java.io.IOException;
-import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.Collection;
 
@@ -19,7 +18,7 @@ import static com.chandu0101.core.db.MongoObjectConverter.fromDBObject;
  * Created by chandrasekharkode on 5/25/14.
  */
 @Singleton
-public class DevSessionsService extends BaseService{
+public class DevSessionsService extends BaseService {
 
     public static final String DEV_SESSIONS = "devsessions";
 
@@ -37,13 +36,10 @@ public class DevSessionsService extends BaseService{
 
     public Collection<Session> getAllSessions() throws Exception {
         Collection<Session> result = new ArrayList<>();
-        final DBCursor cursor = devSessionsCollection.find();
-        try {
+        try (DBCursor cursor = devSessionsCollection.find()) {
             for (DBObject dbObject : cursor.toArray()) {
                 result.add(fromDBObject(dbObject, Session.class));
             }
-        } finally {
-            cursor.close();
         }
         return result;
     }

@@ -16,7 +16,6 @@ import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.Entity;
 import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.GenericType;
-import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.io.IOException;
 import java.net.URI;
@@ -105,7 +104,6 @@ public class EmployeeControllerTest {
         List<Employee> employees = response.readEntity(new GenericType<List<Employee>>() {
         });
         final long count = employees.stream().filter(e -> id.equalsIgnoreCase(e.getId())).count();
-        if(count == 0) return true;
-        return false;
+        return count == 0;
     }
 }
