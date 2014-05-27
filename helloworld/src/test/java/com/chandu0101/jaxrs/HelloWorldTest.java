@@ -17,7 +17,7 @@ import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URL;
 
-import static com.chandu0101.jaxrs.App.API_PATH;
+import static com.chandu0101.core.util.CommonConstants.API_PATH;
 import static org.junit.Assert.assertEquals;
 
 

@@ -25,7 +25,7 @@ import java.util.List;
 import java.util.Map;
 
 import static com.chandu0101.core.service.EmployeeService.*;
-import static com.chandu0101.jaxrs.App.API_PATH;
+import static com.chandu0101.core.util.CommonConstants.API_PATH;
 import static com.chandu0101.jaxrs.controller.EmployeeController.EMPLOYEES;
 import static javax.ws.rs.core.MediaType.APPLICATION_JSON;
 import static org.junit.Assert.assertEquals;
@@ -82,14 +82,14 @@ public class EmployeeControllerTest {
         employeeInDB.setFirstName(employeeInDB.getFirstName().concat(NEW));
         Response response = target.path(employeeInDB.getId()).request(APPLICATION_JSON).put(Entity.json(newvalues));
         Employee updatedEmployee = response.readEntity(Employee.class);
-        assertEquals("should return updated object ",employeeInDB,updatedEmployee );
+        assertEquals("should return updated object ", employeeInDB, updatedEmployee);
     }
 
     @Test
     public void testDelete() throws Exception {
         Employee employee = getEmployee();
         target.path(employee.getId()).request().delete();
-        assertTrue("should delete employee",checkEmployeeExists(employee.getId()));
+        assertTrue("should delete employee", checkEmployeeExists(employee.getId()));
     }
 
     private Employee getEmployee() {

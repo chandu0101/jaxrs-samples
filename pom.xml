@@ -12,6 +12,7 @@
         <module>httpmethods</module>
         <module>commonapi</module>
         <module>subresourcelocator</module>
+        <module>jaxrsinjection</module>
     </modules>
 
     <packaging>pom</packaging>

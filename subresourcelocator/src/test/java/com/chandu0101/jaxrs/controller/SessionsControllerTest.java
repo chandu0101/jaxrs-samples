@@ -21,7 +21,7 @@ import java.net.URI;
 import java.net.URL;
 import java.util.List;
 
-import static com.chandu0101.jaxrs.App.API_PATH;
+import static com.chandu0101.core.util.CommonConstants.API_PATH;
 import static com.chandu0101.jaxrs.controller.SessionsController.SESSIONS;
 import static javax.ws.rs.core.MediaType.APPLICATION_JSON;
 import static org.junit.Assert.assertEquals;
@@ -71,4 +71,6 @@ public class SessionsControllerTest {
         assertEquals("should return 5 objects ", sessions.size(), 5);
         assertTrue("should return stage sessions", sessions.get(0).getUrl().contains(DEV));
     }
+
+
 }

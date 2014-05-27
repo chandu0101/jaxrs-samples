@@ -24,3 +24,21 @@ Where I learn about Jaxrs 2.0 restful webservices
                      
   **SubResourceLocator** :   Subresource lo‐ cators are Java methods annotated with @Path, but with no HTTP method annotation, like @GET, applied to them. This type of method returns an object that is, itself, a JAX- RS annotated service that knows how to dispatch the remainder of the request.
                            [More Info](http://docs.oracle.com/javaee/6/tutorial/doc/gknav.html)
+                           
+  **Jaxrs Injection** : Examples of jaxrs injections 
+  
+                            @javax.ws.rs.PathParam
+                            This annotation allows you to extract values from URI template parameters.
+                            @javax.ws.rs.MatrixParam
+                            This annotation allows you to extract values from URI matrix parameters.
+                            @javax.ws.rs.QueryParam
+                            This annotation allows you to extract values from URI query parameters.
+                            @javax.ws.rs.FormParam
+                            This annotation allows you to extract values from posted form data.
+                            @javax.ws.rs.HeaderParam
+                            This annotation allows you to extract values from HTTP request headers.
+                            @javax.ws.rs.CookieParam
+                            This annotation allows you to extract values from HTTP cookies set by the client.
+                            @javax.ws.rs.BeanParam
+                            It allows you to inject an application-specific class whose property methods or fields are annotated with any of the injection parameters mentioned above
+                            
