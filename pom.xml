@@ -110,6 +110,13 @@
                     <target>1.8</target>
                 </configuration>
             </plugin>
+            <plugin>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>${version.war.plugin}</version>
+                <configuration>
+                    <failOnMissingWebXml>false</failOnMissingWebXml>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 
@@ -126,13 +133,6 @@
             </activation>
             <build>
                 <plugins>
-                    <plugin>
-                        <artifactId>maven-war-plugin</artifactId>
-                        <version>${version.war.plugin}</version>
-                        <configuration>
-                            <failOnMissingWebXml>false</failOnMissingWebXml>
-                        </configuration>
-                    </plugin>
                     <plugin>
                         <artifactId>maven-surefire-plugin</artifactId>
                         <version>${maven-surefire-plugin.version}</version>

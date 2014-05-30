@@ -27,6 +27,7 @@ public class HeaderParamController {
      */
 
     @GET
+    @Path("context")
     public String getType(@Context HttpHeaders headers) {
         return headers.getHeaderString("type");
     }

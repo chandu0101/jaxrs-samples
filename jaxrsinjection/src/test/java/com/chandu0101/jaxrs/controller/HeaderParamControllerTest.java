@@ -53,7 +53,7 @@ public class HeaderParamControllerTest {
 
     @Test
     public void testGeType() throws Exception {
-        final String response = target.request().header("type", "json").get(String.class);
+        final String response = target.path("context").request().header("type", "json").get(String.class);
         assertEquals("should return header type", "json",response);
     }
 }

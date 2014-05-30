@@ -27,6 +27,7 @@ public class QueryParamController {
      */
 
     @GET
+    @Path("context")
     public String getMultiplicationOfTwoNumbers(@Context UriInfo uriInfo) {
         final int valuea = Integer.parseInt(uriInfo.getQueryParameters().getFirst("valuea"));
         final int valueb = Integer.parseInt(uriInfo.getQueryParameters().getFirst("valueb"));

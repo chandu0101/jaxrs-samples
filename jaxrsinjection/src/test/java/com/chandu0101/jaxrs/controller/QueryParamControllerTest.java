@@ -50,7 +50,7 @@ public class QueryParamControllerTest {
 
     @Test
     public void testgetMultiplicationOfTwoNumbers() throws Exception {
-        String response = target.queryParam("valuea", 5).queryParam("valueb", 5).request().get(String.class);
+        String response = target.path("context").queryParam("valuea", 5).queryParam("valueb", 5).request().get(String.class);
         assertEquals("should return multiplication of value and valueb", Integer.parseInt(response), 25);
 
     }
