@@ -5,14 +5,15 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.chandu0101.jaxrs</groupId>
-    <artifactId>learning_jaxrs</artifactId>
+    <artifactId>jaxrs-samples</artifactId>
     <version>1.0</version>
     <modules>
         <module>helloworld</module>
         <module>httpmethods</module>
         <module>commonapi</module>
-        <module>subresourcelocator</module>
-        <module>jaxrsinjection</module>
+        <module>subresource-locator</module>
+        <module>jaxrs-injection</module>
+        <module>custom-marshalling</module>
     </modules>
 
     <packaging>pom</packaging>

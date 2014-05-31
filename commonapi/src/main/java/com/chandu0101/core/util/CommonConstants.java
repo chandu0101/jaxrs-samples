@@ -6,4 +6,6 @@ package com.chandu0101.core.util;
 public interface CommonConstants {
     String JSON_EXTENSION = ".json";
     String API_PATH = "api";
+    String APPLICATION_ASON = "application/ason";
+
 }
