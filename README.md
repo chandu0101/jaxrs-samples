@@ -9,7 +9,7 @@ Where I learn about Jaxrs 2.0 restful webservices
 
 ![module dependency](/commonapi/src/main/resources/modules.png?raw=true)
 
-**learning_jaxrs : Parent Project**
+**jaxrs_samples : Parent Project**
 
  **Commonapi** :  Common project for all other modules ,which provides services,utils etc ...
 
@@ -45,3 +45,4 @@ Where I learn about Jaxrs 2.0 restful webservices
  **Custom Marshalling** :     Example of marshalling/unmarshalling a custom format
                               {key -> value ,key -> value} using javax.ws.rs.ext.MessageBodyReader and         javax.ws.rs.ext.MessageBodyWriter.
                             
+**Caching ** :  Examples of using HTTP 1.1  CacheControl , caching using ETAG , conditional  updates etc ..
