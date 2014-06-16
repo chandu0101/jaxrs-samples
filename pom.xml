@@ -14,6 +14,7 @@
         <module>subresource-locator</module>
         <module>jaxrs-injection</module>
         <module>custom-marshalling</module>
+        <module>caching</module>
     </modules>
 
     <packaging>pom</packaging>

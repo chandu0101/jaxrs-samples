@@ -13,9 +13,13 @@ public class MongoConnectionFactory {
     private static DB db;
 
     public static DB getDB() throws UnknownHostException {
+        return getDB("test");
+    }
+
+    public static DB getDB(String dbname) throws UnknownHostException {
         if (db == null) {
             MongoClient mongoClient = new MongoClient("localhost", 27017);
-            db = mongoClient.getDB("test");
+            db = mongoClient.getDB(dbname);
         }
         return db;
     }
