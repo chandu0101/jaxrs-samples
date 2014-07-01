@@ -46,3 +46,5 @@ Where I learn about Jaxrs 2.0 restful webservices
                               {key -> value ,key -> value} using javax.ws.rs.ext.MessageBodyReader and         javax.ws.rs.ext.MessageBodyWriter.
                             
 **Caching** :  Examples of using HTTP 1.1  CacheControl , caching using ETAG , conditional  updates etc ..
+
+**Filters** : Example of using request and response filters

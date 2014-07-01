@@ -15,6 +15,7 @@
         <module>jaxrs-injection</module>
         <module>custom-marshalling</module>
         <module>caching</module>
+        <module>filters</module>
     </modules>
 
     <packaging>pom</packaging>
